@@ -1,0 +1,281 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --fundo-principal: #f8f9fa;
+  --texto: #1f2937;
+  --texto-inverso:#1f2937;
+  --destaque: #7c3aed;
+  --destaque-inverso:#1f2937;
+  --fundo-card:#e2e8f0;
+}
+body{
+font-family: verdana, Verdana, Geneva, Tahoma, sans-serif;
+line-height: 1.5em;
+background-color: var(--fundo-principal);
+color: var(--texto);
+}
+
+header{
+  background-color: #7c3aed96;
+  backdrop-filter: blur(8px);
+  color: var(--texto);
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  top: 0;
+  position: fixed;
+  width: 100%;
+
+}
+#menu ul{
+list-style: none;
+display: flex;
+gap: 10px;
+}
+#menu a{
+  text-decoration: none;
+  color: var(--texto-inverso);
+  font-weight: 600;
+  padding: 12px 15px;
+  border-radius: 18px;
+  transition: background-color 0.5s, color 0.5s;
+}
+#menu a:hover{
+  background-color: var(--destaque-inverso);
+  color: var(--destaque);
+}
+main{
+display: grid;
+grid-template-columns: auto 90vw auto;
+gap: 20px;
+margin-top: 20px;
+
+}
+#About{
+  background-color: var(--fundo-card);
+  padding: 20px;
+  border-radius: 8px;
+  grid-column: 2;
+  margin-top: 35px;
+}
+#About img.foto{
+  width: 200px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+  outline: 5px solid var(--destaque);
+  border: 5px solid var(--fundo-card);
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+}
+#About h1{
+  color: var(--destaque);
+  margin: 15px 0;
+  font-size: 20px;
+  text-align: center;
+}
+#social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8em;
+  gap: 2em;
+  margin-top: 15px;
+}
+#social a{
+   
+  color: var(--texto-inverso);
+
+  padding: 3px 2px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  
+}
+#social a:hover{
+   background-color: var(--destaque-inverso);
+  color: var(--destaque);
+}
+#detalhe{
+  grid-column: 2;
+}
+article{
+  background-color: var(--fundo-card);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+article h2{
+  color: var(--destaque);
+  margin-bottom: 10px;
+}
+#skill-cont{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+   
+}
+#skill-cont .info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+
+}
+
+#skill-cont .porcento{
+  color: var(--destaque);
+  font-weight: bold;
+}
+
+#skill-cont .barra{
+  width: 100%;
+  height: 8px;
+  background-color: var(--fundo-principal);
+  border-radius: 4px;
+}
+
+#skill-cont .progresso{
+  height: 100%;
+  background-color: var(--destaque-inverso);
+  border-radius: 4px;
+}
+#formacao{
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+}
+#formacao .curso{
+background-color: var(--fundo-principal);
+border-radius: 8px;
+border-left: 2px solid var(--destaque-inverso)  ;
+padding-left: 15px;
+transition: border-width 0.5s, border-color 0.5s;
+
+}
+#formacao .curso:hover{
+  border-left-width: 15px;
+  cursor: pointer;
+  border-color: var(--destaque);
+}
+/*#formacao .instituicao{
+  color: var(--destaque-inverso);
+  font-size: 1.1em;
+}P*/
+#projeto{
+display: flex;
+flex-direction: column-reverse;
+gap: 20px;
+}
+#projeto .projeto{
+  display: flex;
+flex-direction: column;
+gap: 15px;
+background-color: var(--fundo-principal);
+padding: 10px;
+border-radius: 7px;
+border-left: 2px solid var(--destaque-inverso) ;
+transition: border-width 0.5s, border-color 0.5s;
+}
+.projeto:hover{
+   border-left-width: 15px;
+  cursor: pointer;
+  border-color: var(--destaque);
+}
+#projeto .foto{
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 8px;
+}
+@media screen and (min-width: 768px) {
+  #projeto .projeto{
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  } 
+  #projeto .projeto-info{
+     max-width: 80%; 
+
+  } 
+  #projeto .foto{max-width: 20%;
+  aspect-ratio: 1/1;
+  max-height: 200px;} 
+  #About h1{
+  font-size: 40px;
+ 
+  }
+  input{
+  width: 50%;             
+  
+}
+
+}
+
+/*Formulario*/
+
+
+input[type="tel"], 
+input[type="text"] {
+  width: 90%;             
+  padding: 7px 7px;     
+  margin: 4px 0;           
+  display: inline-block;
+  border: 1px solid var(--destaque-inverso);  
+  border-radius: 7px;      
+  box-sizing: border-box;  
+  font-size: 11px;         
+  transition: 0.3s;        
+}
+
+input {
+  border: 177px solid var(--destaque-inverso);
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  border-left: 45px solid var(--destaque-inverso);
+}
+
+/* ERRO: Fica vermelho e PERMANECE vermelho */
+
+input:not(:placeholder-shown):invalid {
+  border-color: #ff0000;
+  background-color:var(--fundo-principal);
+}
+
+/* VOLTANDO AO CAMPO: A cor muda quando o usuário clica para corrigir */
+input:focus {
+  border-color: var(--destaque-inverso); /* Azul para indicar edição */
+  background-color: var(--fundo-principal);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/*  SUCESSO: Se o usuário corrigiu e saiu do campo, fica verde */
+input:not(:placeholder-shown):valid {
+  border: 2.5px solid  #28a745;
+}
+#but{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+  gap: 2em;
+  margin-top: 15px;
+
+  color: var(--texto-inverso);
+
+  padding: 3px 2px;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s; 
+  
+}
+form button:hover{
+   background-color: var(--destaque);
+   color: wheat;
+}
+

@@ -1,0 +1,74 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --fundo-principal: #f8f9fa;
+  --texto: #1f2937;
+  --texto-inverso:#1f2937;
+  --destaque: #7c3aed;
+  --destaque-inverso:#1f2937;
+  --fundo-card:#e2e8f0;
+}
+body{
+font-family: verdana, Verdana, Geneva, Tahoma, sans-serif;
+line-height: 1.5em;
+background-color: var(--fundo-principal);
+color: var(--texto);
+}
+
+input[type="tel"], 
+input[type="text"] {
+  width: 90%;             
+  padding: 7px 7px;     
+  margin: 4px 0;           
+  display: inline-block;
+  border: 1px solid var(--destaque-inverso);  
+  border-radius: 7px;      
+  box-sizing: border-box;  
+  font-size: 11px;         
+  transition: 0.3s;        
+}
+/* 
+input:required:invalid {
+  border-left: 5px solid var(--destaque-inverso); 
+}
+
+/* Quando o usuário digitou algo que não segue o padrão (pattern) 
+input:focus:invalid {
+  border: 2px solid red; 
+  background-color: var(--fundo-principal);
+}
+
+input:valid {
+  border: 3px solid #28a745; 
+}*/
+/* 1. Estilo padrão do input */
+input {
+  border: 2px solid var(--destaque-inverso);
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  border-left: 45px solid var(--destaque-inverso);
+}
+
+/* 2. ERRO: Fica vermelho e PERMANECE vermelho */
+/* O :not(:placeholder-shown) garante que não comece vermelho quando vazio */
+input:not(:placeholder-shown):invalid {
+  border-color: #ff0000;
+  background-color:var(--fundo-principal);
+}
+
+/* 3. VOLTANDO AO CAMPO: A cor muda quando o usuário clica para corrigir */
+input:focus {
+  border-color: var(--destaque-inverso); /* Azul para indicar edição */
+  background-color: var(--fundo-principal);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* 4. SUCESSO: Se o usuário corrigiu e saiu do campo, fica verde */
+input:not(:placeholder-shown):valid {
+  border: 2.5px solid  #28a745;
+}

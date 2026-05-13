@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="LoginCliente.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/login" method="POST">
+  <div>
+    <label for="usuario">Nome:</label>
+    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+  </div>
+
+  <div>
+    <label for="codigo">Processo (5 dígitos):</label>
+<input 
+  type="text" 
+  id="codigo" 
+  name="codigo" 
+  inputmode="numeric" 
+  minlength="5" 
+  maxlength="5" 
+  pattern="\d{5}" 
+  title="O processo deve ser composto por 5 dígitos e têm que ser números inteiros."
+  placeholder="Digite seu número de processo" 
+  required >
+  </div>
+ <div>
+   
+    <input type="tel" id="telefone" name="telefone" 
+    
+  inputmode="tel" 
+  minlength="5" 
+  maxlength="15" 
+  pattern="^[0-9\-\+\s\(\)]*$" 
+  title="O telefone deve ser composto por 9 dígitos e têm que ser números inteiros."
+    placeholder="Digite seu número de telefone" required>
+  </div>
+  <button type="submit">Cadastrar</button>
+</form>
+</body>
+</html>
